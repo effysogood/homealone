@@ -33,6 +33,11 @@ export const PATH = Object.freeze({
   room: '/room' as const,
 
   /**
+   * 방자랑 작성페이지
+   */
+  roomWrite: '/room/write' as const,
+
+  /**
    * 혼잣말 페이지
    */
   talk: '/talk' as const,
