@@ -14,8 +14,12 @@ import { CATEGORY_OPTIONS } from '../Main/constants';
 import { ListTitle } from '../Main/components/ListTitle';
 import { DateSlot } from '../Main/components/DateSlot';
 
-import { ROOM_PATH } from '@/constants/paths';
+import { PATH, ROOM_PATH } from '@/constants/paths';
+import { Button } from '@/components/ui/button';
 
+/**
+ * 방자랑 페이지 컴포넌트
+ */
 const Room = () => {
   const navigate = useNavigate();
 
@@ -36,11 +40,16 @@ const Room = () => {
             </div>
           </div>
         </FormProvider>
-        <ListTitle
-          imgPath="/icons/room_icon.png"
-          title="케빈들의 아지트"
-          description="다른사람들의 아지트를 확인해보세요!"
-        />
+        <div className="flex justify-between items-center">
+          <ListTitle
+            imgPath="/icons/room_icon.png"
+            title="케빈들의 아지트"
+            description="다른사람들의 아지트를 확인해보세요!"
+          />
+          <Button className="rounded-full" onClick={() => navigate(PATH.roomWrite)}>
+            새 글 작성
+          </Button>
+        </div>
         <div className="grid grid-cols-4 gap-6 place-items-start">
           {Array.from({ length: 20 }).map((_, i) => (
             <Card
